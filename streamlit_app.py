@@ -1,4 +1,10 @@
 import os
+import sys
+import subprocess
+try:
+  subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', 'requirements.txt'])
+except subprocess.CalledProcessError as e:
+  print(f"Error installing requirements: {e}")
 import streamlit as st
 import pandas as pd
 import numpy as np
